@@ -1,7 +1,7 @@
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.demo.entities.Task;
+import com.example.demo.entities.TaskList;
 
 import java.time.LocalDate;
 
