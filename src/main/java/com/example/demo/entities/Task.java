@@ -1,11 +1,22 @@
 package com.example.demo.entities;
 
+import javax.persistence.*;
 import java.time.LocalDate;
-
+@Entity
+@Table(name="task")
 public class Task {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    private long id;
+    @Column(name= "Description")
     private String description;
+    @Column(name= "done")
     private Boolean done;
+    @Column(name="duedate")
     private LocalDate dueDate;
+
+
 
     public Task(String description, Boolean done, LocalDate dueDate){
         this.description = description;
