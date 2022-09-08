@@ -15,7 +15,8 @@ public class Task {
     private Boolean done;
     @Column(name="duedate")
     private LocalDate dueDate;
-
+    public Task( ){
+          }
 
 
     public Task(String description, Boolean done, LocalDate dueDate){
