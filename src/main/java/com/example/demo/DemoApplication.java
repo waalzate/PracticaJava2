@@ -12,7 +12,7 @@ public class DemoApplication {
 
 
 	public static void main(String[] args) {
-		 SpringApplication.run(DemoApplication.class, args);
+		 SpringApplication.run(DemoApplication.class, args) ;
 		/*Task tarea1 = new Task("Aprender Java", false, LocalDate.of(2022,12,31));
 		System.out.println(tarea1.getDescription());
 		tarea1.setDescription("Aprender Java y desarrollo Web");
