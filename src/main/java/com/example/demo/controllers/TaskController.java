@@ -22,12 +22,12 @@ public class TaskController {
 
     }
 
-    @GetMapping("/tasks")
-    public List<Task> TaskList(){
+   // @GetMapping("/tasks")
+    //public List<Task> TaskList(){
 
 
-     return this.service.getTaskList();
-    }
+   //  return this.service.getTaskList();
+   // }
 
     @PostMapping("/tasks")
         public Task createTask(@RequestBody Task task) {
