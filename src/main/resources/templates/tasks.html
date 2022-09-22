@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en", xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,25 +12,22 @@
 <body>
 <main>
     <div class="px-4 py-5 my-5 text-center">
-        <h1 class = "display-5 fw-bold">Mis Tareas</h1>
+        <div>
+            <h1 class = "display-5 fw-bold">Mis Tareas</h1>
+            <a href = "/tasks/new" class ="btn  btn-secondary"> Crear Nueva Tarea</a>
+        </div>
          <div class = "d-flex gap-4 justify-content-center">
-
-
              <div th:each="task :${tasks}" class="card" style="width: 18rem;">
                  <div th:switch = "${task.done} ">
-                     <img th:case = "true" src="img/done.png" class="card-img-top"  style = "width:60px" alt = "ImageTareas"/>
-                     <img th:case = "false" src="img/pending.png" class="card-img-top" style = "width:60px" alt = "ImageTareas"/>
-
+                     <img th:case = "true" src="img/done.png" class="card-img-top"  style = "width:60px" alt = "ImageTareas">
+                     <img th:case = "false" src="img/pending.png" class="card-img-top" style = "width:60px" alt = "ImageTareas">
                  </div>
-
-
                  <div class="card-body">
                      <h5 class="card-title" th:text="${task.description}"></h5>
                      <p class="card-text"  th:text="${task.dueDate}"></p>
- <div th:if="${!task.done}">
-     <a href="#" class="btn btn-primary">Finalizar Tarea</a>
- </div>
-
+                     <div th:if="${!task.done}">
+                         <a href="#" class="btn btn-primary"> Finalizar Tarea </a>
+                     </div>
                  </div>
              </div>
          </div>
