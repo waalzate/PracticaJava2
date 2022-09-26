@@ -27,11 +27,14 @@ public class TaskController {
 
     @PostMapping("/tasks")
         public RedirectView createTask(@ModelAttribute @DateTimeFormat(pattern = "YYYY-MM-DD") Task task, Model model) {
-
         model.addAttribute(task);
         task.setDone(false);
         this.service.createTask(task);
         return new RedirectView("/tasks");
     }
-
+@PatchMapping("/tasks/{id}")
+    public RedirectView updateTask(@PathVariable("id") Long id){
+        this.service.markTaskAsFinished(id);
+        return new RedirectView("/tasks");
+}
 }

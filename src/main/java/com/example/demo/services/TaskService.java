@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -25,9 +26,15 @@ public class TaskService {
     }
 public Task createTask(Task newTask){
         return this.repository.save(newTask);
-
-
 }
-
+public Boolean markTaskAsFinished(Long id){
+        Optional<Task> task = this.repository.findById(id);
+        if(task.isPresent()){
+            task.get().setDone(true);
+        this.repository.save(task.get());
+                return true;
+        }
+        return false;
+ }
 }
 
